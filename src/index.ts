@@ -3,7 +3,7 @@ import { staticPlugin } from '@elysiajs/static'
 
 const app = new Elysia()
     .use(staticPlugin({ assets: "public", prefix: "/public" }))
-    .get("/", () => Bun.file("hello.html"))
+    .get("/", () => Bun.file("index.html"))
     .listen(80);
 
 
