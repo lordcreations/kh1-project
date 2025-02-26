@@ -1,0 +1,144 @@
+<!-- 
+  "Tão inconsequеnte
+  Eu me apressei pra ser presente
+  Eu sou só mais um carente que não conseguiu aguentar"
+  https://soundcloud.com/dlamantes/shaarksz-mania-de-voce
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyblade</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="./public/js.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./public/images/keyblade.png">
+    <style>
+      * {
+        font-family: ComicHearts;
+      }
+      @font-face {
+        font-family: ComicHearts;
+        src: url(./public/ComicHearts.otf);
+        font-weight: bold;
+      }
+      .animate {
+        animation: item 3s;
+        animation-iteration-count: infinite;
+      }
+
+      .fade-in {
+        animation: flashbang 4s forwards;
+      }
+
+      .fade-out {
+        animation: flashbang 4s reverse forwards;
+      }
+      
+
+      @keyframes item {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes flashbang {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      
+    </style>
+  </head>
+  <body class="bg-black">
+    <div id="scene" class="flex flex-col items-center justify-center h-screen hidden">
+      <img src="./public/images/scene.gif" alt="scene" class="w-auto h-auto" />
+      <p class="">your heart is pure</p>
+    </div>
+
+    <div id="question" class="flex flex-col items-center justify-center h-screen">
+      <div class="space-y-12 font-bold">
+
+        <p class="text-white text-2xl text-center filter blur-[0.7px]">Power sleeps within you, if you give it form it will give you strength.<br/>Choose well.</p>
+        
+        <div class="flex text-center justify-center space-x-32 text-sm">
+            <div id="sword" class="animate relative group flex flex-col items-center justify-center">
+            <img src="./public/images/sword.webp" alt="sword" class="w-30 h-36 group-hover:brightness-125 group-hover:drop-shadow-[0_0_20px_rgba(255,255,0,0.5)] duration-300" />
+            <p class="blur-[0.55px] absolute left-1/2 transform -translate-x-1/2 top-full mt-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-60 text-center">
+                The power of the warrior.<br/>
+                Invincible courage. <br/>
+                A sword of terrible destruction.<br/>
+            </p>
+          </div>
+
+          <div id="staff" class="animate relative group flex flex-col items-center justify-center">
+            <img src="./public/images/staff.webp" alt="staff" class="w-30 h-36 group-hover:brightness-125 group-hover:drop-shadow-[0_0_20px_rgba(0,191,255,0.5)] duration-300"/>
+            <p class="blur-[0.55px] absolute left-1/2 transform -translate-x-1/2 top-full mt-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-60 text-center">
+                The power of the mystic.<br/>
+                Inner strength.<br/>
+                A staff of wonder and ruin.<br/>
+            </p>
+          </div>
+
+          <div id="shield" class="animate relative group flex flex-col items-center justify-center">
+            <img src="./public/images/shield.webp" alt="shield" class="w-30 h-36 group-hover:brightness-125 group-hover:drop-shadow-[0_0_20px_rgba(255,64,0,0.5)] duration-300"/>
+            <p class="blur-[0.55px] absolute left-1/2 transform -translate-x-1/2 top-full mt-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-60 text-center">
+                The power of the guardian.<br/>
+                Kindness to aid friends.<br/>
+                A shield to repel all.<br/>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="dialog" class="flex flex-col items-center justify-center h-screen absolute inset-0 hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+        <div class="absolute top-[30%] text-white text-3xl font-bold">
+            <span>
+                Is this the power you seek?
+            </span>
+        </div>
+    
+        <div class="relative" style="perspective: 600px;">
+            <div
+                class="relative w-80 text-center bg-[#232532] p-12 text-2xl text-white transform shadow-[0px_20px_60px_rgba(0,0,0,0.85),_inset_10px_8px_20px_rgba(255,255,255,0.1)]"
+                style="transform: rotateX(18deg) scaleY(1.05) translateY(8px); border-radius: 40px; pointer-events: auto;
+                    background: linear-gradient(180deg, rgba(40,42,58,1) 0%, rgba(24,26,38,1) 100%);
+                    border: 4px solid rgba(255, 255, 255, 0.1);">
+                
+                <div class="absolute top-0 left-0 w-full h-full rounded-[40px] pointer-events-none"
+                    style="box-shadow: inset 0px 4px 10px rgba(255, 255, 255, 0.1);">
+                </div>
+    
+                <div id="selector" class="absolute w-8 h-8 left-6">
+                    <img src="./public/images/selector.png" alt="selector" class="transform rotate-90" />
+                </div>
+    
+                <div class="option relative py-2 cursor-pointer flex items-center gap-2 pl-12" data-index="0">
+                    <span>Yes.</span>
+                </div>
+                <div class="option relative py-2 cursor-pointer flex items-center gap-2 pl-12" data-index="1">
+                    <span>No.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      <div id="flash-in" class="hidden absolute inset-0 bg-white opacity-0">
+      </div>
+      <div id="flash-out" class="hidden absolute inset-0 bg-white opacity-0">
+      </div>
+  </body>
+</html>
